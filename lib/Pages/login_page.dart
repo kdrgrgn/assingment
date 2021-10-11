@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
       ControllerAccount _controllerAccount =   Get.put(ControllerAccount());
      await _controllerAccount.signIn(mail!, password!).then((tokenMain) {
         if(tokenMain==null){
-          _showDialog("Giriş Başarısız","Giriş bilgilerinizi kontrol ediniz",context);
+          _showDialog("Giriş Başarısız","Email veya şifre hatalı",context);
 
         }
       });
