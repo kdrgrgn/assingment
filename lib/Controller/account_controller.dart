@@ -78,7 +78,6 @@ RxBool isLoadingLanding=true.obs;
     pageLoading();
 
     TokenMain? tokenMain = await serviceDB.signIn(email, password);
-print("tokenMain = $tokenMain");
     if (tokenMain != null) {
 
       const storage = FlutterSecureStorage();

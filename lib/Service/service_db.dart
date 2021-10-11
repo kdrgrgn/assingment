@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:assingment/Model/Token/token_main.dart';
 import 'package:assingment/Model/User/user.dart';
@@ -99,7 +98,6 @@ class ServiceDB implements ServiceBase {
       var response = await http.post(Uri.parse(_serviceUrl.signIn),
           body: jsonEncode({"Email": email, "Password": password}),
           headers: headers);
-      print("signin yapiyor = ${response.body}");
 
       final responseData = jsonDecode(response.body) as Map<String, dynamic>;
       TokenMain main = TokenMain.fromJson(responseData);
@@ -110,7 +108,6 @@ class ServiceDB implements ServiceBase {
         return main;
       }
     } catch (e) {
-      print("signin cath girdii $e");
       return null;
     }
   }
